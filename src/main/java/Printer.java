@@ -17,13 +17,25 @@ public class Printer {
         return this.toner;
     }
 
+
     public int print() {
+        this.toner = this.sheets;
         int pages = 7;
         int copies = 3;
         if (this.sheets >= (pages * copies)) {
             return (this.sheets -= (pages * copies));
-        }else{
+        }else {
             return sheets;
+        }
+    }
+
+    public int toner() {
+        int pages = 7;
+        int copies =3;
+        if (this.sheets >= (pages * copies)) {
+            return (this.toner -= (pages * copies));
+        }else {
+            return toner;
         }
     }
 }
