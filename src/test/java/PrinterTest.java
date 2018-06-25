@@ -21,13 +21,11 @@ public class PrinterTest {
             assertEquals(100, printer.getToner());
         }
 
-        @Test
-        public void print(){
-            assertEquals(79, printer.print());
-        }
 
-        @Test
-        public void toner(){
-            assertEquals(79, printer.toner());
-        }
+    @Test
+    public void realPrint(){
+            printer.realPrint(7,3);
+        assertEquals(79, printer.getToner());
+        assertEquals(79, printer.getSheets());
+    }
 }

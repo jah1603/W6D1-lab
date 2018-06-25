@@ -18,25 +18,21 @@ public class Printer {
     }
 
 
-    public int print() {
-        this.toner = this.sheets;
-        int pages = 7;
-        int copies = 3;
-        if (this.sheets >= (pages * copies)) {
-            return (this.sheets -= (pages * copies));
-        }else {
-            return sheets;
+    public void print(int pages, int copies) {
+        int pagesToPrint = pages * copies;
+        if (this.sheets >= pagesToPrint && this.toner >= pagesToPrint) {
+            this.sheets -= (pages * copies);
+            reduceToner(pagesToPrint);
         }
     }
 
-    public int toner() {
-        int pages = 7;
-        int copies =3;
-        if (this.sheets >= (pages * copies)) {
-            return (this.toner -= (pages * copies));
-        }else {
-            return toner;
-        }
+    public void reduceToner(int numberOfCopies) {
+        this.toner -= numberOfCopies;
+    }
+
+    public void realPrint(int pages, int copies) {
+        print(pages, copies);
     }
 }
+
 
